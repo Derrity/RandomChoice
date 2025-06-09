@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     wheel = document.getElementById('wheel');
     document.getElementById('spinBtn').addEventListener('click', spin);
     document.getElementById('addOptionBtn').addEventListener('click', addOption);
+    document.getElementById('clearHistoryBtn').addEventListener('click', clearHistory);
     
     // 监听输入变化
     document.getElementById('optionsList').addEventListener('input', function() {
@@ -187,6 +188,10 @@ function addToHistory(result) {
     while (historyList.children.length > 8) {
         historyList.removeChild(historyList.lastChild);
     }
+}
+
+function clearHistory() {
+    document.getElementById('historyList').innerHTML = '';
 }
 
 // 添加选项
