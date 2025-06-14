@@ -8,18 +8,9 @@ let historyList; // 用于存储历史记录列表的 DOM 元素
 // 初始化
 document.addEventListener('DOMContentLoaded', function() {
     wheel = document.getElementById('wheel');
-    historyList = document.getElementById('historyList'); // 获取 historyList 元素
-    const spinBtn = document.getElementById('spinBtn');
-    const addOptionBtn = document.getElementById('addOptionBtn');
-    const optionsListContainer = document.getElementById('optionsList'); // 获取选项列表的容器
-    const clearHistoryBtn = document.getElementById('clearHistoryBtn'); // 获取清空历史按钮
-
-    if (spinBtn) {
-        spinBtn.addEventListener('click', spin);
-    }
-    if (addOptionBtn) {
-        addOptionBtn.addEventListener('click', addOption);
-    }
+    document.getElementById('spinBtn').addEventListener('click', spin);
+    document.getElementById('addOptionBtn').addEventListener('click', addOption);
+    document.getElementById('clearHistoryBtn').addEventListener('click', clearHistory);
     
     // 监听选项列表容器中输入框的变化（使用事件委托，更高效）
     if (optionsListContainer) {
@@ -218,6 +209,10 @@ function closeModal() {
     if (modal) {
         modal.style.display = 'none';
     }
+}
+
+function clearHistory() {
+    document.getElementById('historyList').innerHTML = '';
 }
 
 // 添加选项
