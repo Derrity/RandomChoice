@@ -32,6 +32,32 @@ h1 {
     color: #2c3e50;
 }
 
+.history-header {
+    display: flex;
+    justify-content: space-between; /* 标题居左，按钮居右 */
+    align-items: center;          /* 垂直居中对齐 */
+    margin-bottom: 10px;          /* 按钮和历史列表之间增加一些间距 */
+}
+
+.history-header h4 {
+    margin-bottom: 0; /* 移除标题原有的下边距，因为父元素已经有边距了 */
+}
+
+.clear-btn {
+    background-color: #e74c3c; /* 一个示例背景色 (红色系) */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.clear-btn:hover {
+    background-color: #c0392b; /* 鼠标悬停时深一点的颜色 */
+}
+
 .main-content {
     display: flex;
     gap: 40px;
